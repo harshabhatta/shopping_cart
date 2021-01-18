@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Menu from './Components/Menu/Menu';
+import NavBar from './Components/NavBar/NavBar';
+import { Grid } from '@material-ui/core';
+import CartDetails from './Components/CartDetails/CartDetails';
+import DrawerDetails from './Components/Drawer/Drawer';
+import useStyles from './AppStyles';
 
-function App() {
+const App = () => {
+  const classes = useStyles();
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar toggleDrawer={setDrawerOpen} />
+      <Grid container>
+        <Grid item xs={12}>
+          <DrawerDetails toggleDrawer={setDrawerOpen} open={drawerOpen} />
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={8}>
+          <Menu />
+        </Grid>
+        <Grid item xs={12} sm={4} className={classes.mobile}>
+          <CartDetails />
+        </Grid>
+      </Grid>
     </div>
   );
-}
+};
 
 export default App;

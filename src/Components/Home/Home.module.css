@@ -1,0 +1,13 @@
+.home_container {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 1)
+    ),
+    url('../../Assets/home_bg_img.jpg');
+
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  height: 100vh;
+}
