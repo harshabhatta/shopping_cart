@@ -18,11 +18,11 @@ const App = () => {
           <DrawerDetails toggleDrawer={setDrawerOpen} open={drawerOpen} />
         </Grid>
       </Grid>
-      <Grid container spacing={2}>
+      <Grid container className={classes.shopDetails}>
         <Grid item xs={12} sm={8}>
           <Menu />
         </Grid>
-        <Grid item xs={12} sm={4} className={classes.mobile}>
+        <Grid item xs={12} sm={4} className={classes.cartDetails}>
           <CartDetails />
         </Grid>
       </Grid>

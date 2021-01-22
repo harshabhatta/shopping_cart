@@ -26,7 +26,7 @@ export const MenuDetails = [
   {
     id: 'SweetBreadv1_00002',
     type: 'Bread',
-    name: 'Sweet Bread',
+    name: 'Sweet Banana Bread',
     price: 100,
     vegetarian: false,
     imageUrl: bread,
@@ -44,5 +44,16 @@ export const MenuDetails = [
     quantity: 0,
     description:
       'Delicious rasin cookies made of organic wheat flour, chocolates. It is rich of proteins with egg.',
+  },
+  {
+    id: 'Cookiesv1_00003',
+    type: 'Cookies',
+    name: 'Chocolate Cookies',
+    price: 200,
+    vegetarian: false,
+    imageUrl: bread,
+    quantity: 0,
+    description:
+      'Delicious choco cookies made of organic wheat flour, chocolates. It is rich of proteins with egg.',
   },
 ];
