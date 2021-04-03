@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import {
   List,
   ListItem,
@@ -7,6 +8,7 @@ import {
   IconButton,
   Typography,
   Divider,
+  Button,
 } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { ShoppingCartContext } from '../../Context/Context';
@@ -59,6 +61,16 @@ const Cart = () => {
           </Typography>
         </ListItemSecondaryAction>
       </List>
+      <div className={classes.button}>
+        <Button
+          variant='contained'
+          color='primary'
+          component={Link}
+          to='/checkout'
+        >
+          Checkout
+        </Button>
+      </div>
     </div>
   );
 };

@@ -1,32 +1,19 @@
-import React, { useState } from 'react';
-import Menu from './Components/Menu/Menu';
-import NavBar from './Components/NavBar/NavBar';
-import { Grid } from '@material-ui/core';
-import CartDetails from './Components/CartDetails/CartDetails';
-import DrawerDetails from './Components/Drawer/Drawer';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ShoppingCart from './Components/ShoppingCart/ShoppingCart';
+import Checkout from './Components/Checkout/Checkout';
 import useStyles from './AppStyles';
 
 const App = () => {
   const classes = useStyles();
-  const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <div>
-      <NavBar toggleDrawer={setDrawerOpen} />
-      <Grid container>
-        <Grid item xs={12}>
-          <DrawerDetails toggleDrawer={setDrawerOpen} open={drawerOpen} />
-        </Grid>
-      </Grid>
-      <Grid container className={classes.shopDetails}>
-        <Grid item xs={12} sm={8}>
-          <Menu />
-        </Grid>
-        <Grid item xs={12} sm={4} className={classes.cartDetails}>
-          <CartDetails />
-        </Grid>
-      </Grid>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path='/menu' component={ShoppingCart} />
+        <Route exact path='/checkout' component={Checkout} />
+      </Switch>
+    </Router>
   );
 };
 
